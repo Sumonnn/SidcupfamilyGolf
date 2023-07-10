@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color:#fff ;
+}
+*::selection{
+   background-color: #fff;
+   color: #95C11E;
+}
+html,body{
+    width: 100%;
+    /* perspective: 800px; */
+    height: 100%;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 6px;
+    background: linear-gradient(to right,#95C11E,#000);
+    /* background-color: #95C11E; */
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 25px;
+}
+/* ------------------navbar------------------------- */
+.navbar{
+    height: 145px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 150px;
+    gap: 50px;
+    position: fixed;
+    z-index: 99;
+}
+.navbar img{
+    height: 75px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+.navbar img:hover{
+    transform: scale(0.9);
+}
+.navbar h4{
+    font-weight: 500;
+    cursor: pointer;
+}
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+.cursor{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #95C11E;
+    position: fixed;
+    z-index: 99;
+    transition: 0.06s linear;
+}
+.cursor-blur{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #96c11e2a;
+    position: fixed;
+    z-index:9;
+    transition: 0.06s linear;
+
+    filter: blur(40px);
+}
+/* --------------------main--------------------------- */
+.main{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.37);
+}
+/* ----------------------page1------------------------ */
+.page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.page1 h1{
+    letter-spacing: .02em;
+    font-weight: 900;
+    font-size: 140px;
+    position: relative;
+}
+.page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+}
+.page1 h2{
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.page1 p{
+    font-size: 20px;
+    font-weight: 600;
+    width: 50%;
+    z-index: 10;
+}
+.page1 .arrow{
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+    left: -50px;
+    bottom: 0;
+    z-index: 10;
+    transition: all ease 0.5s;
+    border: 3px solid #95C11E;
+}
+.page1 .arrow i{
+    font-size: 40px;
+    font-weight: 100;
+}
+.page1 .arrow:hover{
+    cursor: pointer;
+    scale: 0.3;
+    background-color: #95C11E;
+}
+/* ----------------------page2------------------------ */
+.page2{
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+}
+.scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 9;
+}
+.scroller::-webkit-scrollbar{
+    display: none;
+}
+.scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.scroller h4{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    margin-right: 10px;
+    color: black;
+    font-family: "gilroy";
+    transition: all linear 0.3s;
+    -webkit-text-stroke: 2px #fff;
+}
+.scroller h4:hover{
+    color: #95C11E;
+    -webkit-text-stroke: 2px #95C11E;
+    cursor: default;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+.about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+    z-index: 10;
+    /* background-color: red; */
+}
+.about-us img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.about-us-in{
+    width: 50%;
+    text-align: center;
+}
+.about-us-in h3{
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.about-us-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.cards-container{
+    /* background-color: red; */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    width: 24%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease 0.5s;
+     cursor: pointer;
+    /* background-color: blue; */
+}
+#card1{
+      background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+      background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+      background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    padding-left: 20px;
+    transition: all ease 0.5s;
+    background-color: #95C11E;
+}
+.overlay h4{
+    font-size: 42px;
+    color: black;
+}
+.overlay p{
+    font-size: 20px;
+    color: black;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,15deg);
+}
+.green-div{
+    height: 30vh;
+    /* background-color: red; */
+    background: linear-gradient(to left bottom,#20A337,#ACDF22);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.green-div img{
+    height: 100%;
+    width: 14%;
+    object-fit: cover;
+}
+.green-div h4{
+    font-size: 28px;
+    width: 45%;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+}
+/* ----------------------extra-page-------------------------- */
+.extra-page{
+    width: 99.5%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(255, 0, 0, 0.183); */
+}
+.scrollers{
+    position: relative;
+    z-index: 9;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transform: rotate(-4deg);
+    /* background-color: #20a3385e; */
+}
+.scrollers::-webkit-scrollbar{
+    display: none;
+}
+.part1-scroll{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;   
+}
+.insta-photo{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+/* -------------------------page3------------------------------- */
+.page3{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.page3>p{
+    width: 60%;
+    line-height: 50px;
+    font-size: 35px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+.page3 img{
+   position: absolute;
+   height: 60px;
+}
+.page3 .colon1{
+    top: 25%;
+    left: 15%;
+}
+.page3 .colon2{
+    right:15%;
+    bottom: 25%;
+}
+.page4{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    /* background-color: red; */
+}
+.page4 h1{
+    position: absolute;
+    font-size: 98px;
+    top: -22%;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+    font-family: "gilroy";
+    font-weight: 900;
+}
+.elem{
+    height: 70%;
+    width: 28%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.elem h2{
+    width: 100%;
+    height: 100%;
+    font-size: 38px;
+    font-weight: 800;
+    color: #000;
+    background-color: #95C11E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+.elem img{
+    width: 100%;
+    height: 100%;
+    transition: all ease 0.5s;
+    scale: 1.1;
+    object-fit: cover;
+}
+.elem:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+.elem:hover img{
+    scale: 1;
+}
+.footer{
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    background: linear-gradient(to left bottom,#20A337,#ACDF22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    padding: 0 100px;
+}
+.footer>img{
+    /* width: 25%; */
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -5%;
+    object-fit: cover;
+}
+ .f1 img{
+    height: 100px;
+    cursor: pointer;
+    /* position: absolute;
+    top: 0%;
+    z-index: 9999; */
+    transition: ease-in 0.2s;
+}
+.footer .f1 img:hover{
+    transform: scale(0.9);
+}
+.footer h3{
+    color: #000;
+    font-size: 30px;
+    white-space: nowrap;
+    line-height: 45px;
+    font-weight: 800;
+}
+.footer h3:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.footer .f4 h4{
+    color: #000;
+}
+.f1,.f2,.f3,.f4{
+    width: fit-content;
+    position: relative;
+    z-index: 9;
+}
